@@ -117,10 +117,12 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cub
 .header-link:hover,
 .header-link:focus {
 color: var(--accent-color);
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
     position: relative; 
+    color: #000000;
 }
 .current::after {
     position: absolute;
@@ -310,10 +312,38 @@ color: #212121;
     display: flex;
     gap: 30px;
 }
+
 .about-item {
-    width: 370px;
-    height: 294px;
+    margin-right: 30px;
 }
+
+.about-item:last-child {
+    margin-right: 0;
+}
+
+.about-top-wrap {
+    position: relative;
+}
+
+.about-top-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(47, 48, 58, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /*------------------------------------TEAM---------------------------------------*/
 .team {
@@ -388,9 +418,14 @@ color: #212121;
 }
 .barbers-soc-icon {
     fill: #AFB1B8;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .barbers-soc-link:hover {
     background-color: #2196F3 ;
+    transition: background-color 250ms 
+    cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .barbers-soc-link:hover .barbers-soc-icon{
     fill: #FFFFFF;
@@ -409,6 +444,15 @@ color: #212121;
     justify-content: center; 
     margin-bottom: 50px; 
 }
+
+.portfolio-filter-item {
+    margin-right: 8px;
+}
+
+.portfolio-filter-item:last-child {
+    margin-right: 0;
+}
+
 
 .hero-two-list{
     display: flex;
@@ -451,10 +495,12 @@ color: #212121;
 
 .hero-two-link {
     display: block;
+    
 }
 
 .hero-two-link:hover,
 .hero-two-link:focus {
+
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -479,13 +525,17 @@ color: #212121;
 }
 
 .hero-two-btn:hover,
-.hero-two-btn:focus,
-.current {
+.hero-two-btn:focus {
     color: #ffffff;
     background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.current-top {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 .hero-two-w {
     padding: 20px 24px 20px 24px;
     border-left: 24px;
@@ -553,7 +603,9 @@ color: #757575;
     color: #AFB1B8;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -611,6 +663,8 @@ padding-bottom: 60px;
 .conacts-list {
     font-style: normal;
 }
+
+
 .mail-link,
 .conacts-map {
     margin-bottom: 9px;
@@ -629,8 +683,10 @@ font-weight: 400;
 font-size: 14px;
 line-height: calc(24 /14);
 letter-spacing: 0.03em;
-color: #FFFFFF;
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+color: #ffffff;
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .conacts-map:hover,
 .conacts-map:focus {
@@ -643,7 +699,9 @@ font-size: 14px;
 line-height: calc(24 /14);
 letter-spacing: 0.03em;
 color: rgba(255, 255, 255, 0.6);
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail-link:hover,
 .mail-link:focus {
@@ -656,7 +714,9 @@ font-size: 14px;
 line-height: calc(24 /14);
 letter-spacing: 0.03em;
 color: rgba(255, 255, 255, 0.6);
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tel-link:hover,
 .tel-link:focus {
@@ -678,17 +738,25 @@ letter-spacing: 0.03em;
 text-transform: uppercase;
 color: #ffffff;
 }
-.footer-soc-link {
+
+.barbers-soc-item {
     width: 44px;
     height: 44px;
-    border-radius: 50%;
-    background-color: hsla(0, 10%, 100%, 0.144) ;
+}
+
+.footer-soc-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1).;
-    
+    height: 100%;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-soc-icon {
     fill: #ffffff;
 }
