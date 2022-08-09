@@ -4,9 +4,10 @@
     --third-titel-color:#FFFFFF; 
     --accent-color: #2196f3;  
     --main-page-color: #212121; 
-    --light: #f5f4fa;  
-     
+    --light: #f5f4fa;   
+    --transition: transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 a,
 p,
@@ -62,7 +63,7 @@ body {
 }
 
 
-/*------------------------------------HEADER---------------------------------------*/
+/*--------------HEADER----------------*/
 
 .header {
     padding-top: 24px;
@@ -74,20 +75,12 @@ body {
     align-items: center;
 }
 
-
-.header-nav {
-    display: flex;
-    align-items: center;
-}
-
+.header-nav,
 .header-list {
     display: flex;
     align-items: center;
 }
 
-.header-logo{ 
-    margin-right: 50px;
-}
 .header-logo {
     margin-right: 93px;
     font-family: 'Raleway';
@@ -95,6 +88,7 @@ body {
     font-size: 26px;
     line-height: 1.2;
     letter-spacing: 0.03em;
+    margin-right: 50px;
     color: #2196f3;
 }
 .header-nav span {
@@ -112,29 +106,17 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: var(--first-titel-color);
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
 color: var(--accent-color);
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current {
-    position: relative; 
-    color: #000000;
-}
-.current::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 4px;
-    border-radius: 3px;
-    left: 0;
-    background-color: #2196F3;
-    bottom: -32px;
-}
- .header-connect {
+
+.header-connect {
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -146,7 +128,7 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: var(--second-titel-color);
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: var(--transition);
 }
 .header-tel:hover,
 .header-tel:focus {
@@ -160,11 +142,28 @@ color: var(--accent-color);
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--second-titel-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 .header-mail:hover,
 .header-mail:focus {
 color: var(--accent-color);
+}
+
+/*--------------СONTACTS----------------*/
+.current {
+    position: relative; 
+    color: var(--accent-color);
+}
+.current::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+    left: 0;
+    background-color: #2196F3;
+    bottom: -32px;
 }
 .contacts-link {
     font-size: 14px;
@@ -173,7 +172,9 @@ color: var(--accent-color);
     color: var(--secondary-page-color);
     display: flex;
     align-items: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -186,7 +187,7 @@ color: var(--accent-color);
     background-position: center;
 }
 
-/*------------------------------------HERO---------------------------------------*/
+/*--------------------HERO-------------------*/
 
 .hero {
 background-color:  #2F303A;
@@ -244,7 +245,7 @@ color: #FFFFFF;
 }
 
 
-/*------------------------------------MIX---------------------------------------*/
+/*------------------MIX-------------------*/
 .mix {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -290,7 +291,7 @@ color: #757575;
     
 }
 
-/*------------------------------------ABOUT---------------------------------------*/
+/*------------------ABOUT-------------------*/
 
 .about {
     padding-top: 0px;
@@ -345,7 +346,7 @@ color: #212121;
 }
 
 
-/*------------------------------------TEAM---------------------------------------*/
+/*------------------TEAM-------------------*/
 .team {
 padding-top: 94px;
 padding-bottom: 94px;
@@ -397,19 +398,23 @@ color: #212121;
     margin-top: 10px;
     color: #757575;
 }
- .team-list {
-     display: flex;
-     column-gap: 30px;
- }
+.team-list {
+    display: flex;
+    column-gap: 30px;
+}
 
- .team-item {
-     width: calc((100% - 60px) /3);
-     border-radius: 0 0 0 0;
-     background-color: #ffffff;
-     width: 270px;
- }
+.team-item {
+width: calc((100% - 60px) /3);
+border-radius: 0 0 0 0;
+background-color: #ffffff;
+width: 270px;
+}
 
- .barbers-soc {
+
+
+/*------------------TEAM-------------------*/
+
+.barbers-soc {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -422,7 +427,7 @@ color: #212121;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 .barbers-soc-icon {
     fill: #AFB1B8;
@@ -432,8 +437,6 @@ color: #212121;
 }
 .barbers-soc-link:hover {
     background-color: #2196F3 ;
-    transition: background-color 250ms 
-    cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .barbers-soc-link:hover .barbers-soc-icon{
     fill: #FFFFFF;
@@ -453,15 +456,6 @@ color: #212121;
     margin-bottom: 50px; 
 }
 
-.portfolio-filter-item {
-    margin-right: 8px;
-}
-
-.portfolio-filter-item:last-child {
-    margin-right: 0;
-}
-
-
 .hero-two-list{
     display: flex;
     flex-wrap: wrap;
@@ -475,7 +469,7 @@ color: #212121;
 }
 .hero-two-item:hover 
 .hero-two-top-text {
- transform: translateY(0%);
+transform: translateY(0%);
 }
 
 .hero-two-wap {
@@ -483,33 +477,44 @@ color: #212121;
     overflow: hidden ;
 }
 
-
-.hero-two-top-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #ffffff;
-    height: 100%;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: calc(28 / 18);
-    letter-spacing: 0.03em;
-    padding: 63px 24px 63px 24px;
-    background-color: hsla(207, 90%, 54%, 0.815);
-    transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
-}
-
-
 .hero-two-link {
     display: block;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .hero-two-link:hover,
 .hero-two-link:focus {
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.hero-two-wan {
+    position: absolute;
+    background: rgba(33, 150, 243, 0.9);
+    right: 0;
+    top: 0;
+    padding-top: 63px;
+    padding-right: 24px;
+    padding-bottom: 63px;
+    padding-left: 24px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(101%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.hero-two-link:hover .hero-two-wan {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-two-top-text {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    color: #ffffff;
 }
 
 
@@ -528,8 +533,10 @@ color: #212121;
     background-color: var(--light);
     cursor: pointer;
     border: none;
-    border-radius: 4px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;  
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-two-btn:hover,
@@ -539,11 +546,6 @@ color: #212121;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.current-top {
-    color: #ffffff;
-    background-color: var(--accent-color);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-}
 .hero-two-w {
     padding: 20px 24px 20px 24px;
     border-left: 24px;
@@ -569,6 +571,21 @@ letter-spacing: 0.03em;
 color: #757575;
 }
 
+/*------------------PORTFOLIO.HTML------------------*/
+.portfolio-filter-item {
+    margin-right: 8px;
+}
+
+.portfolio-filter-item:last-child {
+    margin-right: 0;
+}
+
+/*------------------CURRENT.HTML------------------*/
+.current-top {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 
 /*-----------------clients------------------*/
 .clients {
@@ -634,8 +651,6 @@ background-color: #2f303a;
 padding-top: 60px;
 padding-bottom: 60px;
 }
-
-
 
 .container-footer {
     display: inline-grid;
@@ -812,24 +827,7 @@ transform: translate(-50%,-50%) scale(0);
 }
 
 
-/*.button-soc-link {
-    width: 30px;
-    height: 30px;
-    transition: background-color 300ms linear, 300ms linear;
-}
-
-.button-soc-icon {
-    fill: #050505;
-}
-.button-soc-link:hover {
-    background-color: #2196F3 ;
-}
-.button-soc-link:hover .barbers-soc-icon{
-    fill: #FFFFFF;
-}
-*/
-
-
+/*-----------------BACKDROP------------------*/
 .is-hidden {
     opacity: 0;
     visibility: hidden;
