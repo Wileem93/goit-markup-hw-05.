@@ -353,6 +353,14 @@ background-color:  #F5F4FA;
 }
 
 
+.team-box {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    border-radius: 0px 0px 4px 4px;
+}
+
+
 .team-titel {
 font-family: 'Roboto',sans-serif;
 font-weight: 700;
@@ -495,7 +503,7 @@ color: #212121;
 
 .hero-two-link {
     display: block;
-    
+
 }
 
 .hero-two-link:hover,
